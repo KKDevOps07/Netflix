@@ -11,9 +11,19 @@ artifacts_bucket = "aws-sam-cli-managed-dev-pipeline-r-artifactsbucket-unks4yus6
 image_repository = ""
 region = "us-east-1"
 
+[dev.pipeline.source]
+provider = "GitHub"
+repository = "KKDevOps07/Netflix"
+branch = "master"
+
 [prod.pipeline_bootstrap.parameters]
 pipeline_execution_role = "arn:aws:iam::569187742262:role/aws-sam-cli-managed-prod-pipe-PipelineExecutionRole-L4XeMKLwU2SA"
 cloudformation_execution_role = "arn:aws:iam::569187742262:role/aws-sam-cli-managed-prod--CloudFormationExecutionRo-Te90z96DOqAV"
 artifacts_bucket = "aws-sam-cli-managed-prod-pipeline--artifactsbucket-rja52xmogg1d"
 image_repository = ""
 region = "us-east-1"
+
+[prod.pipeline.source]
+provider = "GitHub"
+repository = "KKDevOps07/Netflix"
+branch = "master"
