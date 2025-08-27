@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Netflix SAM local deployment example
+Resources:
+  NetflixFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: NetflixFunction
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Events:
+        HelloApi:
+          Type: Api
+          Properties:
+            Path: /hello
+            Method: get
+    Metadata:
+      SamResourceId: NetflixFunction
